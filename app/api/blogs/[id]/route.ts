@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 export const GET = async (req: Request, res: Response) => {
     try {
         const id = req.url.split("blogs/")[1]
-        console.log(id);
         const post = getById(id)
         if (!post) {
             return NextResponse.json({ message: "Error" }, { status: 404 })
